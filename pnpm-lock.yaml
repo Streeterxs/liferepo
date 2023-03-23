@@ -16,6 +16,14 @@ importers:
       prettier: 2.8.6
       turbo: 1.8.5
 
+  packages/authreader:
+    specifiers:
+      eslint: ^8.36.0
+      lint-staged: 13.2.0
+    devDependencies:
+      eslint: 8.36.0
+      lint-staged: 13.2.0
+
 packages:
 
   /@eslint-community/eslint-utils/4.3.0_eslint@8.36.0:
