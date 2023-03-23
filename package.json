@@ -8,7 +8,8 @@
         "prettier": "prettier --write",
         "lint": "lint-staged",
         "turbo-lint": "turbo run lint",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "remove-branches": "git branch | grep -v 'main' | xargs git branch -D"
     },
     "keywords": [],
     "author": "Afonso Araújo Neto",
