@@ -1,6 +1,5 @@
 module.exports = {
     env: {
-        browser: true,
         node: true,
         es2021: true,
     },
@@ -10,6 +9,5 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    ignorePatterns: ["packages/*"],
     rules: {},
 }

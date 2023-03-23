@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prettier": "prettier --write",
-        "lint-staged": "lint-staged",
+        "lint": "lint-staged",
+        "turbo-lint": "turbo run lint",
         "prepare": "husky install"
     },
     "keywords": [],
@@ -20,7 +21,8 @@
         "eslint": "^8.36.0",
         "husky": "^8.0.3",
         "lint-staged": "13.2.0",
-        "prettier": "^2.8.6"
+        "prettier": "^2.8.6",
+        "turbo": "^1.8.5"
     },
     "lint-staged": {
         "*.{js, ts}": "eslint --fix",
