@@ -1,17 +1,30 @@
 {
-  "name": "liferepo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  
-  "author": "Afonso Araújo Neto",
-  "engines": {
-      "node": "=16",
-      "pnpm": "=7"
-  },
-  "license": "ISC"
+    "name": "liferepo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prettier": "prettier --write",
+        "lint-staged": "lint-staged",
+        "prepare": "husky install"
+    },
+    "keywords": [],
+    "author": "Afonso Araújo Neto",
+    "engines": {
+        "node": "=16",
+        "pnpm": "=7"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^8.36.0",
+        "husky": "^8.0.3",
+        "lint-staged": "13.2.0",
+        "prettier": "^2.8.6"
+    },
+    "lint-staged": {
+        "*.{js, ts}": "eslint --fix",
+        "*.spec.{js,ts}": "eslint --fix",
+        "*.{js,ts,css,md}": "prettier --write"
+    }
 }
