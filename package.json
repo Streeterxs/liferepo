@@ -9,7 +9,8 @@
         "lint": "lint-staged",
         "turbo-lint": "turbo run lint",
         "prepare": "husky install",
-        "remove-branches": "git branch | grep -v 'main' | xargs git branch -D"
+        "remove-branches": "git branch | grep -v 'main' | xargs git branch -D",
+        "es": "node -r esbuild-register"
     },
     "keywords": [],
     "author": "Afonso Araújo Neto",
@@ -19,11 +20,13 @@
     },
     "license": "ISC",
     "devDependencies": {
-        "eslint": "^8.36.0",
-        "husky": "^8.0.3",
+        "esbuild": "0.17.12",
+        "esbuild-register": "3.4.2",
+        "eslint": "8.36.0",
+        "husky": "8.0.3",
         "lint-staged": "13.2.0",
-        "prettier": "^2.8.6",
-        "turbo": "^1.8.5"
+        "prettier": "2.8.6",
+        "turbo": "1.8.5"
     },
     "lint-staged": {
         "*.{js, ts}": "eslint --fix",
