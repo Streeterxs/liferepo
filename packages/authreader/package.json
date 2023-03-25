@@ -5,16 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "lint-staged"
+    "lint": "eslint src/* --fix --no-ignore"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "lint-staged": {
-    "*.{js, ts}": "eslint . --fix",
-    "*.spec.{js,ts}": "eslint . --fix"
-  },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.56.0",
+    "@typescript-eslint/parser": "5.56.0",
     "@types/node": "18.15.7",
     "eslint": "^8.36.0",
     "lint-staged": "13.2.0",

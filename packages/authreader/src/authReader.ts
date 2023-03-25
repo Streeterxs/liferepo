@@ -24,6 +24,7 @@ const authReader = async () => {
 
         const attempt = getAttempt(lastContent)
 
+        // eslint-disable-next-line
         console.log({ attempt })
     }
 }
