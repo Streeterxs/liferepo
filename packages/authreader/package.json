@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint src/* --fix --no-ignore"
+    "lint": "lint-staged --debug"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,8 @@
     "eslint": "^8.36.0",
     "lint-staged": "13.2.0",
     "typescript": "5.0.2"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix"
   }
 }
