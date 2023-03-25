@@ -4,20 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "lint-staged"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "lint-staged": {
-    "*.{js, ts}": "eslint --fix",
-    "*.spec.{js,ts}": "eslint --fix"
-  },
   "devDependencies": {
     "@types/node": "18.15.7",
-    "eslint": "^8.36.0",
-    "lint-staged": "13.2.0",
     "typescript": "5.0.2"
   }
 }
