@@ -10,6 +10,8 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    ignorePatterns: ["packages/*"],
-    rules: {},
+    ignorePatterns: ['packages/*'],
+    rules: {
+        'no-console': 'error',
+    },
 }

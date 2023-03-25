@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "*.{js, ts}": "eslint --fix",
-    "*.spec.{js,ts}": "eslint --fix"
+    "*.{js, ts}": "eslint . --fix",
+    "*.spec.{js,ts}": "eslint . --fix"
   },
   "devDependencies": {
     "@types/node": "18.15.7",
