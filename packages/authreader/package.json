@@ -1,6 +1,6 @@
 {
-  "name": "authreader",
-  "version": "1.0.0",
+  "name": "@liferepo/authreader",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,9 +16,10 @@
     "@types/node": "18.15.7",
     "eslint": "^8.36.0",
     "lint-staged": "13.2.0",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "@liferepo/eslint": "0.0.1"
   },
   "lint-staged": {
-    "*.{js,ts}": "eslint --fix"
+    "authreader/**/*.{js,ts}": "eslint --fix"
   }
 }
