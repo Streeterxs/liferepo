@@ -27,5 +27,3 @@ const authReader = async () => {
         console.log({ attempt })
     }
 }
-
-;(() => authReader())()
