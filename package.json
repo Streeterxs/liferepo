@@ -4,10 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "prettier": "prettier --write",
         "lint": "lint-staged",
-        "turbo-lint": "turbo run lint",
+        "turbo": "turbo",
         "prepare": "husky install",
         "remove-branches": "git branch | grep -v 'main' | xargs git branch -D",
         "eslint": "eslint",
