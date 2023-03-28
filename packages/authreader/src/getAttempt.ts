@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-enum AttemptEnum {
+export enum AttemptEnum {
     LOGGED = 'logged',
     WRONG_PASSWORD = 'wrong_password',
     CLOSED = 'closed',
