@@ -5,8 +5,9 @@
     "removeComments": true,
     "preserveConstEnums": true,
     // "outFile": "../../built/local/tsc.js",
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": "."
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["**/node_modules/**, node_modules"]
 }
