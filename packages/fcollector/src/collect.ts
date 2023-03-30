@@ -1,11 +1,7 @@
 import { getItemBySlug } from './getItemBySlug'
 import { ItemTime, saveItemTime } from './saveItemTime'
 
-export const collect = async ({
-  slug = 'ffxiv_persimmon',
-  minutes,
-  qty,
-}: ItemTime) => {
+export const collect = async ({ slug, minutes, qty }: ItemTime) => {
   const item = getItemBySlug(slug)
 
   if (!item) {
