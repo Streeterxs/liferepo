@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "module": "system",
+    "module": "CommonJS",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     // "outFile": "../../built/local/tsc.js",
     "sourceMap": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "resolveJsonModule": true,
   },
   "include": ["src", "scripts"],
   "exclude": ["**/node_modules/**, node_modules"]
