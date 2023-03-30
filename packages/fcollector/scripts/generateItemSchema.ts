@@ -1,6 +1,6 @@
 import { writeFile, readFile } from 'node:fs/promises'
-const generateDataSchema = async () => {
-  const data = [
+const generateItemSchema = async () => {
+  const item = [
     {
       name: 'Persimmon Log',
       slug: 'ffxiv_persimmon',
@@ -18,8 +18,8 @@ const generateDataSchema = async () => {
     },
   ]
 
-  const stringfiedData = JSON.stringify(data)
-  await writeFile(`${__dirname}/../data/dataSchema.json`, stringfiedData)
+  const stringfiedItem = JSON.stringify(item)
+  await writeFile(`${__dirname}/../item/item.json`, stringfiedItem)
 }
 
-;(async () => await generateDataSchema())()
+;(async () => await generateItemSchema())()
