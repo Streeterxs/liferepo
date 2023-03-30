@@ -1,0 +1,14 @@
+{
+  "name": "fcollector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "18.15.7",
+    "@liferepo/eslint": "0.0.1"
+  },
+  "bin": "./src/fcollector"
+}
