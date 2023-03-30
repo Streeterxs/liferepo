@@ -7,8 +7,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@liferepo/eslint": "0.0.1",
     "@types/node": "18.15.7",
-    "@liferepo/eslint": "0.0.1"
+    "@types/yup": "0.32.0"
+  },
+  "dependencies": {
+    "yup": "1.0.2"
   },
   "bin": "./src/fcollector"
 }
