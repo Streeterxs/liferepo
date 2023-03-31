@@ -1,5 +1,8 @@
-const { eslintNode } = require('@liferepo/eslint')
+const { eslintNode } = require('@liferepo/eslint');
 
 module.exports = {
   ...eslintNode,
-}
+  rules: {
+    ...eslintNode.rules,
+  },
+};
