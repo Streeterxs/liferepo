@@ -1,4 +1,4 @@
-import items from '../data/item.json'
+import * as items from '../data/item.json';
 
 export const getItemBySlug = (slug: string) =>
-  items.find((singItem) => singItem.slug === slug)
+  items.find((singItem: any) => singItem.slug === slug);
