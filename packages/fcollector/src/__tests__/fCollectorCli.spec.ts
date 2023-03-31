@@ -21,7 +21,7 @@ const item = [
 
 jest.mock('node:fs/promises', () => ({
   writeFile: jest.fn(),
-  readFile: jest.fn(() => new Buffer(JSON.stringify(item))),
+  readFile: jest.fn(() => new Buffer(JSON.stringify([]))),
 }));
 
 jest.mock('../../data/item.json', () => item);
@@ -32,11 +32,23 @@ beforeEach(() => {
 });
 
 it('should call write file to write new itemTime correctly', async () => {
-  process.argv = ['_', '__', 'ffxiv_persimmon', '10', '10'];
+  const slug = 'ffxiv_persimmon';
+  const minutes = '10';
+  const qty = '50';
+  process.argv = ['_', '__', slug, minutes, qty];
 
   await fCollectorCli();
 
-  expect(writeFile).toBeCalled();
+  expect((writeFile as jest.Mock).mock.calls).toHaveLength(1);
+
+  const itemTime = {
+    slug,
+    minutes: Number(minutes),
+    qty: Number(qty),
+  };
+  expect((writeFile as jest.Mock).mock.calls[0][1]).toEqual(
+    JSON.stringify([itemTime])
+  );
 });
 
 it('should avoid call write file to writeFile if minutes is not a number and generate a error', async () => {
