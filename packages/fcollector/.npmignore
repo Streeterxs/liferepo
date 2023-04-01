@@ -1,7 +1,9 @@
 .turbo
+.eslintrc.js
 data
 scripts
 babel.config.json
-jest.config.json
+jest.config.js
 rollup.config.js
 tsconfig.json
+src
