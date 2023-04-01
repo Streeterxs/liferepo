@@ -1,4 +1,9 @@
 #!/usr/bin/env node
-const run = () => {}
 
-run()
+import { fCollectorCli } from './fCollectorCli';
+
+const fCollector = async () => {
+  await fCollectorCli();
+};
+
+(async () => await fCollector())();
