@@ -20,7 +20,7 @@ const babelOptions = {
   babelHelpers: 'bundled',
   extensions,
   include: ['src/**/*'],
-  presets: ['@babel/preset-typescript'],
+  presets: ['@babel/preset-env', '@babel/preset-typescript'],
   plugins: [],
   exclude: ['babel.config.js'],
 };
