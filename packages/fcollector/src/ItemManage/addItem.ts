@@ -1,4 +1,3 @@
-import inquirer from 'inquirer';
 import { getAllSlugs } from '../getAllSlugs';
 
 const keyValueQuestions = [
@@ -53,6 +52,9 @@ const questions = [
 ];
 
 export const addItem = async () => {
+  // esm package
+  const inquirer = (await import('inquirer')).default;
+
   const answers = await inquirer.prompt(questions);
   console.log({ answers });
 };

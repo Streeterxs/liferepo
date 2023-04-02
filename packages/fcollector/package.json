@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit --skipLibCheck",
     "lint": "lint-staged",
     "build": "pnpm rollup --config --bundleConfigAsCjs",
-    "build:linux:admin": "pnpm build && chmod +x build/fCollector.cjs.js"
+    "build:linux:admin": "pnpm build && chmod +x build/fCollector.cjs.js",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "7.21.0",
