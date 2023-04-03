@@ -1,19 +1,52 @@
+import yargs, { CommandModule } from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
 import { collect } from './collect';
 import { getAllSlugs } from './getAllSlugs';
+import { addItem } from './ItemManage/addItem';
 
 export const fCollectorCli = async () => {
   const [_, __, slug, minutes, qty] = process.argv;
 
+  const allSlugs = getAllSlugs();
+
   if (!slug) {
     console.log('Slug is required\n');
     console.log('Slugs: \n');
-
-    const allSlugs = getAllSlugs();
 
     allSlugs.map((slug: string) => console.log(slug));
 
     return;
   }
 
-  await collect({ slug, minutes: Number(minutes), qty: Number(qty) });
+  if (allSlugs.includes(slug)) {
+    await collect({ slug, minutes: Number(minutes), qty: Number(qty) });
+    return;
+  }
+
+  const collectCommand: CommandModule = {
+    command: 'collect <slug> <minutes> <qty>',
+    describe:
+      'Collect new data based on quantity and minutes to any given item',
+    handler: (args) => {
+      console.log({ args });
+      return;
+    },
+  };
+
+  const addItemCommand: CommandModule = {
+    command: 'addItem',
+    describe:
+      'Collect new data based on quantity and minutes to any given item',
+    handler: async (args) => {
+      console.log({ args });
+      await addItem();
+      return;
+    },
+  };
+
+  return yargs(hideBin(process.argv))
+    .command(collectCommand)
+    .command(addItemCommand)
+    .help().argv;
 };
