@@ -1,6 +1,5 @@
 .turbo
 .eslintrc.js
-data
 scripts
 babel.config.json
 jest.config.js
