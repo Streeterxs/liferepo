@@ -71,6 +71,13 @@ export const addItem = async () => {
 
   const { name, slug, type } = await inquirer.prompt(questions);
 
+  const allSlugs = getAllSlugs();
+
+  if (allSlugs.includes(slug)) {
+    console.log('Slug already exists');
+    return;
+  }
+
   let valuesArray: { key: string; value: string }[] = [];
   let isToAddKeyValue = true;
   while (isToAddKeyValue) {

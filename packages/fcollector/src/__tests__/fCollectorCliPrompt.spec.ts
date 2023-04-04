@@ -173,3 +173,25 @@ it('should avoid update data file if no name given (no name)', async () => {
 
   expect((writeFile as jest.Mock).mock.calls.length).toEqual(0);
 });
+
+it('should avoid update data file if slug given already exists', async () => {
+  process.argv = ['_', '__', 'addItem'];
+
+  const keyValuePair = {
+    key: 'key',
+    value: 'value',
+  };
+
+  (inquirer.prompt as unknown as jest.MockedFunction<() => {}>)
+    .mockImplementationOnce(() => ({
+      ...inputObj,
+      slug: item[0].slug, //already existing slug inside item.json on data folder
+    }))
+    .mockImplementationOnce(() => ({ toAddKeyValue: true }))
+    .mockImplementationOnce(() => keyValuePair)
+    .mockImplementationOnce(() => ({ toAddKeyValue: false }));
+
+  await fCollectorCli();
+
+  expect((writeFile as jest.Mock).mock.calls.length).toEqual(0);
+});
