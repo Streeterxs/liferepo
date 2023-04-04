@@ -92,7 +92,12 @@ export const addItem = async () => {
     values: valuesArray,
   };
 
-  await itemTimeValSchema.validate(itemObj);
+  try {
+    await itemTimeValSchema.validate(itemObj);
+  } catch (e) {
+    console.log({ error: e });
+    return;
+  }
 
   await concatJsonFile(path, itemObj);
 };
