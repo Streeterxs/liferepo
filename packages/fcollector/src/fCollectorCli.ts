@@ -1,9 +1,10 @@
-import yargs, { CommandModule } from 'yargs';
+import yargs, { ArgumentsCamelCase, CommandModule } from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import { collect } from './collect';
 import { getAllSlugs } from './getAllSlugs';
 import { addItem } from './ItemManage/addItem';
+import { removeItem } from './ItemManage/removeItem';
 
 export const fCollectorCli = async () => {
   const [_, __, slug, minutes, qty] = process.argv;
@@ -45,8 +46,18 @@ export const fCollectorCli = async () => {
     },
   };
 
+  const removeItemCommand: CommandModule = {
+    command: 'removeItem <slug>',
+    describe: 'Remove item based on given slug',
+    handler: async ({ slug }: ArgumentsCamelCase<{ slug: string }>) => {
+      await removeItem(slug);
+      return;
+    },
+  };
+
   return yargs(hideBin(process.argv))
     .command(collectCommand)
     .command(addItemCommand)
+    .command(removeItemCommand)
     .help().argv;
 };

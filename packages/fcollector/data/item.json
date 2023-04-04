@@ -13,20 +13,5 @@
         "value": "Crafting  Material"
       }
     ]
-  },
-  {
-    "name": "Maple Log",
-    "slug": "ffxiv_maplelog",
-    "type": "game_item",
-    "values": [
-      {
-        "key": "type",
-        "value": "Lumber"
-      },
-      {
-        "key": "itemType",
-        "value": "Crafting Material"
-      }
-    ]
   }
 ]
