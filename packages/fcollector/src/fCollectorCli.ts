@@ -4,6 +4,7 @@ import { hideBin } from 'yargs/helpers';
 import { collect } from './collect';
 import { getAllSlugs } from './getAllSlugs';
 import { addItem } from './ItemManage/addItem';
+import { listItem } from './ItemManage/listItem';
 import { removeItem } from './ItemManage/removeItem';
 
 export const fCollectorCli = async () => {
@@ -55,9 +56,19 @@ export const fCollectorCli = async () => {
     },
   };
 
+  const listItemCommand: CommandModule = {
+    command: 'listItem [slug]',
+    describe: 'List all slugs or show item by given slug',
+    handler: async ({ slug }: ArgumentsCamelCase<{ slug: string }>) => {
+      await listItem(slug);
+      return;
+    },
+  };
+
   return yargs(hideBin(process.argv))
     .command(collectCommand)
     .command(addItemCommand)
     .command(removeItemCommand)
+    .command(listItemCommand)
     .help().argv;
 };
