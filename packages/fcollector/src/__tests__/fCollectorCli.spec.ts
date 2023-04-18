@@ -24,6 +24,10 @@ jest.mock('node:fs/promises', () => ({
   readFile: jest.fn(() => new Buffer(JSON.stringify([]))),
 }));
 
+jest.mock('node:fs', () => ({
+  readFileSync: jest.fn(() => new Buffer(JSON.stringify(item))),
+}));
+
 jest.mock('../../data/item.json', () => item);
 
 beforeEach(() => {
